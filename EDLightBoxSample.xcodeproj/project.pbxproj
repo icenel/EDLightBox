@@ -30,7 +30,6 @@
 		8FEDE5AF1B6AEC8900022D09 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDE59E1B6AEC8900022D09 /* UIImageView+WebCache.m */; };
 		8FEDE5B01B6AEC8900022D09 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDE5A01B6AEC8900022D09 /* UIView+WebCacheOperation.m */; };
 		8FEDE5B71B6AF29100022D09 /* EDLightBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDE5B61B6AF29100022D09 /* EDLightBox.swift */; };
-		8FEDE5CE1B6AFC4200022D09 /* UIImageViewModeScaleAspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDE5CD1B6AFC4200022D09 /* UIImageViewModeScaleAspect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +88,6 @@
 		8FEDE5A01B6AEC8900022D09 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		8FEDE5B61B6AF29100022D09 /* EDLightBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EDLightBox.swift; sourceTree = "<group>"; };
 		8FEDE5C41B6AF38500022D09 /* EDLightBoxSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EDLightBoxSample-Bridging-Header.h"; sourceTree = "<group>"; };
-		8FEDE5CC1B6AFC4200022D09 /* UIImageViewModeScaleAspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewModeScaleAspect.h; sourceTree = "<group>"; };
-		8FEDE5CD1B6AFC4200022D09 /* UIImageViewModeScaleAspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewModeScaleAspect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +170,6 @@
 		8FEDE57E1B6AEC6B00022D09 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				8FEDE5CB1B6AFC4200022D09 /* VIvien */,
 				8FEDE57F1B6AEC8900022D09 /* SDWebImage */,
 			);
 			name = Vendor;
@@ -225,15 +221,6 @@
 				8FEDE5B61B6AF29100022D09 /* EDLightBox.swift */,
 			);
 			path = EDLightBox;
-			sourceTree = "<group>";
-		};
-		8FEDE5CB1B6AFC4200022D09 /* VIvien */ = {
-			isa = PBXGroup;
-			children = (
-				8FEDE5CC1B6AFC4200022D09 /* UIImageViewModeScaleAspect.h */,
-				8FEDE5CD1B6AFC4200022D09 /* UIImageViewModeScaleAspect.m */,
-			);
-			path = VIvien;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,7 +339,6 @@
 				8FEDE55C1B6AEB7F00022D09 /* AppDelegate.swift in Sources */,
 				8FEDE5AA1B6AEC8900022D09 /* UIButton+WebCache.m in Sources */,
 				8FEDE5A91B6AEC8900022D09 /* SDWebImagePrefetcher.m in Sources */,
-				8FEDE5CE1B6AFC4200022D09 /* UIImageViewModeScaleAspect.m in Sources */,
 				8FEDE5AF1B6AEC8900022D09 /* UIImageView+WebCache.m in Sources */,
 				8FEDE5A41B6AEC8900022D09 /* SDWebImageCompat.m in Sources */,
 				8FEDE5AB1B6AEC8900022D09 /* UIImage+GIF.m in Sources */,
