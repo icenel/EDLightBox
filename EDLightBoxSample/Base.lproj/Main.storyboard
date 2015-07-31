@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="EDLightBoxSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-0A-Yj0">
+                                <rect key="frame" x="233" y="250" width="135" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="95N-Mq-cd7"/>
+                                    <constraint firstAttribute="height" constant="100" id="Suc-Ma-1tA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZt-jN-oe3">
+                                <rect key="frame" x="276" y="124" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="wOy-YS-S4t">
+                                <rect key="frame" x="277" y="164" width="46" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="PBJ-bp-uxt"/>
+                                    <constraint firstAttribute="width" constant="46" id="gpH-XF-kDj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wOy-YS-S4t" firstAttribute="top" secondItem="pZt-jN-oe3" secondAttribute="bottom" constant="19" id="2oP-E1-AkM"/>
+                            <constraint firstAttribute="centerX" secondItem="wOy-YS-S4t" secondAttribute="centerX" id="Mp3-b8-iTe"/>
+                            <constraint firstAttribute="centerX" secondItem="pZt-jN-oe3" secondAttribute="centerX" constant="0.5" id="Z7O-86-80P"/>
+                            <constraint firstItem="wOy-YS-S4t" firstAttribute="bottom" secondItem="QIe-0A-Yj0" secondAttribute="top" constant="-23" id="beN-av-zGV"/>
+                            <constraint firstAttribute="centerX" secondItem="QIe-0A-Yj0" secondAttribute="centerX" constant="-0.5" id="jXg-Cz-NGP"/>
+                            <constraint firstAttribute="centerY" secondItem="QIe-0A-Yj0" secondAttribute="centerY" id="lKL-RA-otw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="QIe-0A-Yj0" id="0rd-t3-g38"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow-down" width="186" height="258"/>
+    </resources>
+</document>
