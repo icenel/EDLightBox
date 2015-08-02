@@ -53,7 +53,7 @@ class EDLightBox: NSObject {
     
     var animationDuration = 0.6
     var overlayColor = UIColor.blackColor()
-
+    
     weak var delegate: EDLightBoxDelegate!
     
     var lightBoxViewController: EDLightBoxViewController?
@@ -78,8 +78,8 @@ class EDLightBox: NSObject {
     }
     
     func showLightBoxWithSourceImageView(sourceImageView: UIImageView) {
-        assert(delegate != nil, "EDLightBox delegate cannot be nil")
         setupLightBoxViewControllerForImageView(sourceImageView)
+        assert(delegate != nil, "EDLightBox delegate cannot be nil")
         
         self.sourceImageView = sourceImageView
         
@@ -104,17 +104,17 @@ class EDLightBox: NSObject {
         
         UIView.animateWithDuration(animationDuration - 0.2, animations: {
             self.lightBoxViewController!.view.backgroundColor = self.overlayColor
-        }, completion: nil)
+            }, completion: nil)
         
         UIView.animateWithDuration(animationDuration,
-                                    delay: 0,
-                                    usingSpringWithDamping: 0.95,
-                                    initialSpringVelocity: 20,
-                                    options: .CurveLinear,
-                                    animations: {
-            lightBoxImageView.frame = self.lightBoxViewController!.view.frame
-        }, completion: { finished in
-            self.delegate?.lightBoxDidAppear?(self)
+            delay: 0,
+            usingSpringWithDamping: 0.95,
+            initialSpringVelocity: 20,
+            options: .CurveLinear,
+            animations: {
+                lightBoxImageView.frame = self.lightBoxViewController!.view.frame
+            }, completion: { finished in
+                self.delegate?.lightBoxDidAppear?(self)
         })
     }
     
@@ -128,21 +128,24 @@ class EDLightBox: NSObject {
         
         UIView.animateWithDuration(animationDuration - 0.2, animations: {
             self.lightBoxViewController!.view.backgroundColor = UIColor.clearColor()
-        }, completion: nil)
+            }, completion: nil)
         
         UIView.animateWithDuration(animationDuration,
-                                    delay: 0,
-                                    usingSpringWithDamping: 0.95,
-                                    initialSpringVelocity: 20,
-                                    options: .CurveLinear,
-                                    animations: {
-            lightBoxImageView.frame.size = self.sourceImageView!.bounds.size
-            lightBoxImageView.center = lightBoxImageView.superview!.convertPoint(self.sourceImageView!.center, fromView: self.sourceImageView!.superview)
-        }, completion: { finished in
-            self.lightBoxViewController!.view.removeFromSuperview()
-            self.lightBoxViewController!.removeFromParentViewController()
-            self.sourceImageView!.hidden = false
-            self.delegate.lightBoxDidDisappear?(self)
+            delay: 0,
+            usingSpringWithDamping: 0.95,
+            initialSpringVelocity: 20,
+            options: .CurveLinear,
+            animations: {
+                let center = lightBoxImageView.superview!.convertPoint(self.sourceImageView!.center, fromView: self.sourceImageView!.superview)
+                let sourceImageViewSize = self.sourceImageView!.bounds.size
+                lightBoxImageView.frame = CGRect(x: center.x - (sourceImageViewSize.width / 2),
+                    y: center.y - (sourceImageViewSize.height / 2),
+                    width: sourceImageViewSize.width, height: sourceImageViewSize.height)
+            }, completion: { finished in
+                self.lightBoxViewController!.view.removeFromSuperview()
+                self.lightBoxViewController!.removeFromParentViewController()
+                self.sourceImageView!.hidden = false
+                self.delegate.lightBoxDidDisappear?(self)
         })
     }
     
