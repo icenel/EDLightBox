@@ -78,8 +78,8 @@ class EDLightBox: NSObject {
     }
     
     func showLightBoxWithSourceImageView(sourceImageView: UIImageView) {
-        setupLightBoxViewControllerForImageView(sourceImageView)
         assert(delegate != nil, "EDLightBox delegate cannot be nil")
+        setupLightBoxViewControllerForImageView(sourceImageView)
         
         self.sourceImageView = sourceImageView
         
@@ -107,14 +107,14 @@ class EDLightBox: NSObject {
             }, completion: nil)
         
         UIView.animateWithDuration(animationDuration,
-            delay: 0,
-            usingSpringWithDamping: 0.95,
-            initialSpringVelocity: 20,
-            options: .CurveLinear,
-            animations: {
-                lightBoxImageView.frame = self.lightBoxViewController!.view.frame
-            }, completion: { finished in
-                self.delegate?.lightBoxDidAppear?(self)
+                                    delay: 0,
+                                    usingSpringWithDamping: 0.95,
+                                    initialSpringVelocity: 20,
+                                    options: .CurveLinear,
+                                    animations: {
+                                        lightBoxImageView.frame = self.lightBoxViewController!.view.frame
+                                    }, completion: { finished in
+                                        self.delegate?.lightBoxDidAppear?(self)
         })
     }
     
@@ -131,11 +131,11 @@ class EDLightBox: NSObject {
             }, completion: nil)
         
         UIView.animateWithDuration(animationDuration,
-            delay: 0,
-            usingSpringWithDamping: 0.95,
-            initialSpringVelocity: 20,
-            options: .CurveLinear,
-            animations: {
+                                    delay: 0,
+                                    usingSpringWithDamping: 0.95,
+                                    initialSpringVelocity: 20,
+                                    options: .CurveLinear,
+                                    animations: {
                 let center = lightBoxImageView.superview!.convertPoint(self.sourceImageView!.center, fromView: self.sourceImageView!.superview)
                 let sourceImageViewSize = self.sourceImageView!.bounds.size
                 lightBoxImageView.frame = CGRect(x: center.x - (sourceImageViewSize.width / 2),
